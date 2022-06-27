@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "e7f6b8c7-02e5-4e37-b1b7-787bd492d5bf",
+		"name": "Dev Connector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21107280"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Demo1\",\r\n    \"email\":\"demo1@gmail.com\",\r\n    \"password\":\"password\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create and update profile",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiOTUwZTAyYWI2YzExZGY3NGEzZmZlIn0sImlhdCI6MTY1NjMxMjAzMiwiZXhwIjoxNjU2NjcyMDMyfQ.JiuvYUfFCkOR5IwQHE13uV7bH-i0MeiZFDYGOWihI4o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\": \"Larsen & Turbo\",\r\n    \"status\": \"Instructor\",\r\n    \"website\": \"https://www.larsentoubro.com/\",\r\n    \"skills\": \"HTML, CSS, PHP, JAVASCRIPT\",\r\n    \"location\": \"India\",\r\n    \"bio\": \"I am a developer\",\r\n    \"githubusername\": \"landt\",\r\n    \"twitter\": \"http:twt.com\",\r\n    \"facebook\": \"www.facebook.com\",\r\n    \"youtube\": \"www.youtube.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiOTUwZTAyYWI2YzExZGY3NGEzZmZlIn0sImlhdCI6MTY1NjMxMjAzMiwiZXhwIjoxNjU2NjcyMDMyfQ.JiuvYUfFCkOR5IwQHE13uV7bH-i0MeiZFDYGOWihI4o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\": \"New company\",\r\n    \"status\": \"Junior Developer\",\r\n    \"website\": \"https://www.techsoft.com\",\r\n    \"skills\": \"HTML, CSS, PHP\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get profile by user ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile/user/62b8b9d37f4d40f22bb7dad7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"user",
+						"62b8b9d37f4d40f22bb7dad7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Auth after login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiOTUwZTAyYWI2YzExZGY3NGEzZmZlIn0sImlhdCI6MTY1NjMxMjAzMiwiZXhwIjoxNjU2NjcyMDMyfQ.JiuvYUfFCkOR5IwQHE13uV7bH-i0MeiZFDYGOWihI4o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"demo1@gmail.com\",\r\n    \"password\":\"password\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleteuser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiOTgwYzFiNjM0YzBiYzU3NDQ1ZDUyIn0sImlhdCI6MTY1NjMyNDI4OSwiZXhwIjoxNjU2Njg0Mjg5fQ.V44jTiwI60hh4TgkdeMxNDPv6xKRqfIgZxQoK5jg3Kc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profiles",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiOTUwZTAyYWI2YzExZGY3NGEzZmZlIn0sImlhdCI6MTY1NjMxMjAzMiwiZXhwIjoxNjU2NjcyMDMyfQ.JiuvYUfFCkOR5IwQHE13uV7bH-i0MeiZFDYGOWihI4o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\": \"New company\",\r\n    \"status\": \"Junior Developer\",\r\n    \"website\": \"https://www.techsoft.com\",\r\n    \"skills\": \"HTML, CSS, PHP\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Profiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"kashyap172ankur@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add experience",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiOTUwZTAyYWI2YzExZGY3NGEzZmZlIn0sImlhdCI6MTY1NjMyNjUyMCwiZXhwIjoxNjU2Njg2NTIwfQ.P-o4qs8RM9bk5BL7Vln6bONCH9E3x-69BKu8Jj8c7o4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Instructor and senior developer\",\r\n    \"company\": \"Traversy Media\",\r\n    \"location\": \"BOSTON, MA\",\r\n    \"from\": \"8-10-2022\",\r\n    \"current\": true,\r\n    \"description\": \"Create projects and courses on web development\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile/experience",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete experience by exp_id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiOTUwZTAyYWI2YzExZGY3NGEzZmZlIn0sImlhdCI6MTY1NjMyNjUyMCwiZXhwIjoxNjU2Njg2NTIwfQ.P-o4qs8RM9bk5BL7Vln6bONCH9E3x-69BKu8Jj8c7o4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile/experience/62b9898317fedadaa249c788",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"experience",
+						"62b9898317fedadaa249c788"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
